@@ -1,6 +1,6 @@
 import { option } from "../../../components/select/selector";
 
-const listItems : option[] = [
+export const listItems : option[] = [
     {
         label: "Opción 1",
         value: 1
