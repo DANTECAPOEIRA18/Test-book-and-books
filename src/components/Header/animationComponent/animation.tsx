@@ -21,7 +21,7 @@ const FallingBlocks : FC = () => {
             }
             return color;
         }
-    }, []); // Empty dependency array ensures this effect runs once after initial render
+    }, []);
   
     return (
         <div className="animationsite">

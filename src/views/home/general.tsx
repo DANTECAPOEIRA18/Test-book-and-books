@@ -6,6 +6,7 @@ import LayoutFooter from "../../layout/footer/layoutFooter";
 
 
 const GeneralView: FC = ()  => {
+    //laayouts related to struct page
     return(
         <>
             <LayoutHeader/>
