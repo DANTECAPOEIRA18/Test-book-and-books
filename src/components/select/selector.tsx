@@ -1,5 +1,6 @@
-import { FC, useState, useEffect } from "react";
+import { FC } from "react";
 import { IoIosArrowDown } from "react-icons/io";
+import  { selectorHookData } from "./selector.Hook";
 
 
 export interface option {
@@ -12,33 +13,17 @@ interface Props {
 }
 
 const SelectorComponent : FC<Props> = ({options}) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [selectedOptions, setSelectedOptions] = useState<number[]>([]);
-    const [selectedOptionsString, setSelectedOptionsString] = useState<string>('');
-  
-    const toggleDropdown = () => setIsOpen(!isOpen);
-  
-    const handleOptionChange = (optionId: number) => {
-        if (selectedOptions.includes(optionId)) {
-            setSelectedOptions(selectedOptions.filter(id => id !== optionId));
-        } else {
-            setSelectedOptions([...selectedOptions, optionId]);
-        }
-    };
 
-    useEffect(()=>{
-        
-        if(selectedOptions.length > 0){
-            let dataString = '';
-            selectedOptions.map((value)=>{
-                dataString = `${dataString}${dataString === '' ? '' : ','}${options[value-1].label}`
-            })
-            setSelectedOptionsString(dataString);
-        }
-        else{
-            setSelectedOptionsString('');
-        }
-    },[selectedOptions])
+    const {
+        handleOptionChange,
+        isOpen,
+        selectedOptions,
+        selectedOptionsString,
+        toggleDropdown
+    } = selectorHookData({
+        options
+    })
+
     return(
         <>
             <div>

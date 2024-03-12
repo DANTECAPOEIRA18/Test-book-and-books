@@ -17,14 +17,14 @@ const LayoutHeader: FC = () => {
                     <NavBarComponent/>
                 </div >
                 <div className="head2">
-                    <TextHeaderComponent></TextHeaderComponent>
+                    <TextHeaderComponent />
                 </div>
                 <div className="head3">
                     <ButtonComponent label="Go there..." isHeader={true} onClick={handleClickdos}/> 
                 </div>
             </div>
             
-            <FallingBlocks></FallingBlocks>
+            <FallingBlocks />
             
         </div>
     )
