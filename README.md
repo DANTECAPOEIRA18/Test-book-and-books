@@ -2,7 +2,13 @@
 
 In the project directory, you can run:
 
+### `Node version: `
+The project runs with version 16.20.2
+
 ### `yarn`
+Install packages to project
+
+### `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
