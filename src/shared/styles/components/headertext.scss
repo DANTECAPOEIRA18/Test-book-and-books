@@ -1,0 +1,157 @@
+$breakpoint-desktop: 1024px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 320px;
+
+@mixin desktop {
+    @media (min-width: $breakpoint-desktop){
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: $breakpoint-desktop) and (min-width: $breakpoint-tablet){
+        @content;
+    }
+}
+@mixin mobile {
+    @media (max-width: $breakpoint-tablet){
+        @content;
+    }
+}
+
+@include desktop{
+    .header-text {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-family: Roboto;
+        position: absolute; /* Set the text to an absolute position */
+        bottom: 0; /* Align the text to the bottom */
+        left: 0; /* Optional: Center the text horizontally */
+    }
+    .headh1{
+        color:white;
+        font-size: 3.2rem;
+        font-weight:normal;
+    }
+    
+    .headh2{
+        color:white;
+        font-size: 2rem;
+        font-weight: bolder;
+    }
+    
+    .headh3{
+        color:white;
+        font-size: 1rem;
+        font-weight: lighter;
+    }
+    .head1{
+       height: 4rem;
+    }
+    
+    .head2{
+        height: 30.3rem;
+        justify-content:end ;
+        position: relative;
+        
+    }
+    
+    .head3{
+        height: 5rem;
+        
+        padding-top: 1.4rem;
+        padding-left: 2rem;
+        padding-bottom: 1.4;
+        
+    }  
+}
+@include tablet{
+    .header-text {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-family: Roboto;
+        position: absolute; /* Set the text to an absolute position */
+        bottom: 0; /* Align the text to the bottom */
+        left: 0; /* Optional: Center the text horizontally */
+    }
+    .headh1{
+        color:white;
+        font-size: 3.2rem;
+        font-weight:normal;
+    }
+    
+    .headh2{
+        color:white;
+        font-size: 2rem;
+        font-weight: bolder;
+    }
+    
+    .headh3{
+        color:white;
+        font-size: 1rem;
+        font-weight: lighter;
+    }
+    .head1{
+       height: 4rem;
+    }
+    
+    .head2{
+        height: 20rem;
+        justify-content:end ;
+        position: relative;
+        
+    }
+    
+    .head3{
+        height: 4rem;
+        
+        padding-top: .4rem;
+        padding-left: 2rem;
+        
+    }
+}
+@include mobile{
+    .header-text {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-family: Roboto;
+        position: absolute; /* Set the text to an absolute position */
+        bottom: 0; /* Align the text to the bottom */
+        left: 0; /* Optional: Center the text horizontally */
+    }
+    .headh1{
+        color:white;
+        font-size: 3.2rem;
+        font-weight:normal;
+    }
+    
+    .headh2{
+        color:white;
+        font-size: 1.7rem;
+        font-weight: bolder;
+    }
+    
+    .headh3{
+        color:white;
+        font-size: 0.9rem;
+        font-weight: lighter;
+    }
+    .head1{
+       height: 4rem;
+    }
+    
+    .head2{
+        height: 20rem;
+        justify-content:end ;
+        position: relative;
+        
+    }
+    
+    .head3{
+        height: 4rem;
+        
+        padding-top: 0.4rem;
+        padding-left: 2rem;
+
+        
+    }
+}

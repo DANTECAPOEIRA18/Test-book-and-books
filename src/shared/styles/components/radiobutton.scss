@@ -1,0 +1,110 @@
+  input[type="radio"] {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px; /* Optional: Add some spacing between radio inputs */
+    position: relative;
+  }
+  input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 8px; /* Adjust the size of the dot */
+    height: 8px; /* Adjust the size of the dot */
+    border-radius: 50%;
+    background-color: #3C5973; /* Change the dot color to your preferred color */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .radio-text {
+    font-size: 25px;
+    display: inline;
+    cursor: pointer;
+  }
+
+  .inputradio{
+    transform: scale(2);
+    background-color: #3C5973;
+  }
+  .labelradio2{
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+
+  
+
+  
+
+  .radiobutton2{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+  }
+
+  $breakpoint-desktop: 1024px;
+  $breakpoint-tablet: 768px;
+  $breakpoint-mobile: 320px;
+  
+  @mixin desktop {
+      @media (min-width: $breakpoint-desktop){
+          @content;
+      }
+  }
+  @mixin tablet {
+      @media (max-width: $breakpoint-desktop) and (min-width: $breakpoint-tablet){
+          @content;
+      }
+  }
+  @mixin mobile {
+      @media (max-width: $breakpoint-tablet){
+          @content;
+      }
+  }
+
+  @include desktop{
+    .labelradio1{
+      display: flex;
+      flex-direction: row; 
+      justify-content:center; 
+      gap: 5rem; 
+      padding-left: 1rem
+    
+    }
+    .radiobutton1{
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    
+  }
+  @include tablet(){
+    .labelradio1{
+      display: flex;
+      flex-direction: row; 
+      justify-content:center
+      ; 
+      gap: 3rem; 
+      padding-left: 1rem
+    }
+    .radiobutton1{
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    
+  }
+  @include mobile{
+    .labelradio1{
+      display: flex;
+      flex-direction: row; 
+      justify-content:center; 
+      gap: 2rem; 
+      padding-left: 1rem
+    }
+    .radiobutton1{
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+  

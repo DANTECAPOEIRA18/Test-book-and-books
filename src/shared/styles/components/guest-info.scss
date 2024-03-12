@@ -1,0 +1,195 @@
+$breakpoint-desktop: 1024px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 320px;
+
+@mixin desktop {
+    @media (min-width: $breakpoint-desktop){
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: $breakpoint-desktop) and (min-width: $breakpoint-tablet){
+        @content;
+    }
+}
+@mixin mobile {
+    @media (max-width: $breakpoint-tablet){
+        @content;
+    }
+}
+
+
+@include desktop {
+    .body-selectors{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        background-color: #D9DAD9;
+        font-family: roboto;
+        color:#0C1726;
+    }
+    .grid-item {
+        flex: 1 1 calc(33.333% - 20px);
+    }
+    .guest-info{
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        background-color: #D9D9D9;
+        color: #0C1726;
+        font-weight: bold;
+        width: 90%;
+        margin-top: 1rem;
+        color:#0C1726;
+        font-size: large;
+        height: 20rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1vh;
+    }
+    .selector1 {
+        width: min-content;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: Roboto;
+        height: 20rem;
+        font-size: 25px;
+    }
+    
+    .selector2 {
+        background-color: #0C1726;
+        width: 80%;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem;
+        font-family: roboto;
+        height: min-content;
+        text-align: center;
+        border-radius: 0.5rem;
+        
+        
+    }
+    
+    .checkbox-list{
+        padding: 1rem;   
+    }
+    
+}
+@include tablet {
+    .body-selectors{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        background-color: #D9DAD9;
+        font-family: roboto;
+        color:#0C1726;
+    }
+    .grid-item {
+        flex: 1 1 100%;
+    }
+    .guest-info{
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        background-color: #D9D9D9;
+        color: #0C1726;
+        font-weight: bold;
+        width: 70%;
+        margin-top: 1rem;
+        color:#0C1726;
+        font-size: large;
+        height: 20rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2vh;
+    }
+    .selector1 {
+        width: min-content;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: Roboto;
+        height: 20rem;
+        font-size: 25px;
+    }
+    
+    .selector2 {
+        background-color: #0C1726;
+        width: 60%;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem;
+        font-family: roboto;
+        height: min-content;
+        text-align: center;
+        border-radius: 0.5rem;
+        
+        
+    }
+    
+    .checkbox-list{
+        padding: 1rem;   
+    }
+    
+}
+@include mobile {
+    .body-selectors{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        background-color: #D9DAD9;
+        font-family: roboto;
+        color:#0C1726;
+    }
+    .grid-item {
+        flex: 1 1 100%;
+    }
+    .guest-info{
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        background-color: #D9D9D9;
+        color: #0C1726;
+        font-weight: bold;
+        width: 70%;
+        margin-top: 1rem;
+        color:#0C1726;
+        font-size: large;
+        height: 20rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2vh;
+    }
+    .selector1 {
+        width: min-content;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: Roboto;
+        height: 20rem;
+        font-size: 25px;
+    }
+    
+    .selector2 {
+        background-color: #0C1726;
+        width: 60%;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem;
+        font-family: roboto;
+        height: min-content;
+        text-align: center;
+        border-radius: 0.5rem;
+        
+        
+    }
+    
+    .checkbox-list{
+        padding: 1rem;   
+    }
+}
+

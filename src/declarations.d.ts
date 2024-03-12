@@ -1,0 +1,1 @@
+declare import 'react-slick'
