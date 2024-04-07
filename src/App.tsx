@@ -7,8 +7,6 @@ import GeneralView from './views/home/general';
 
 
 function App() {
-    
-    
     return(
         <>
             <GeneralView />

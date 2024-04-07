@@ -1,13 +1,40 @@
-import { FC } from 'react';
+import { FC, useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Slider from 'react-slick';
 import CardComponent from '../../components/card/card';
 import NextArrow from '../../components/ArrowNext/ArrowNext';
 import PrevArrow from '../../components/ArrowPrev/ArrowPrev';
-import { cards } from './interfaces';
+import { cardsProps } from './interfaces';
+import { IPerson } from '../../store/interfaces';
+import { LoadUsers } from '../../store/users/users.asyncActions';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 
 
 const CardSlider : FC = () => {
+    const dispatch = useDispatch();
+    const people : IPerson[] = useSelector((state: any) => state.users.listPeople);
+    const isLoading : boolean = useSelector((state: any) => state.users.isLoading);
+    const[cardsList, setCardList] = useState<cardsProps[]>([]);
+
+    useEffect(()=>{
+        dispatch(LoadUsers(''))
+    },[])
+
+    useEffect(()=>{
+        if(!isLoading){
+            const newCards : cardsProps[] = people.map((person)=>{
+                return {
+                    title: person.title,
+                    image: person.picture
+                }
+            })
+            setCardList(newCards);
+        }
+    },[isLoading, people])
+
+
 
     const settings = {
         dots: true,
@@ -45,15 +72,27 @@ const CardSlider : FC = () => {
         ],
     };
 
+
     return (
         <div className='box-slider'>
-            <Slider {...settings}>
-                {cards.map((card, index) => (
-                    <div key={index}>
-                        <CardComponent image={card.image} title={card.title}/>
-                    </div>
-                ))}
-            </Slider>
+            {
+                isLoading ? (
+                    <Box sx={{ display: 'flex' }}>
+                        <CircularProgress />
+                    </Box>
+                )
+                    :
+                    (
+                        <Slider {...settings}>
+                            {cardsList.map((card, index) => (
+                                <div key={index}>
+                                    <CardComponent image={card.image} title={card.title}/>
+                                </div>
+                            ))}
+                        </Slider>
+                    )
+            }
+
         </div>
 
     );

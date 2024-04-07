@@ -1,6 +1,11 @@
 import { useState, ChangeEvent, FormEvent, useEffect } from "react";
+import { IPerson } from "../../store/interfaces";
+import { useSelector } from "react-redux";
+
 
 export const formHookData = () => {
+    const personForm : IPerson = useSelector((state:any)=> state.users.onePerson)
+
     const [name, setName] = useState<string>('');
     // State for the email input
     const [email, setEmail] = useState<string>('');
@@ -34,6 +39,13 @@ export const formHookData = () => {
         setDataUser(`Form was submitted with Name: ${name} and Email: ${email}`)
         // Here you could also do something with the form data, like sending it to a server
     };
+
+    useEffect(()=>{
+        setName(`${personForm.firstName} ${personForm.lastName}`);
+        setEmail(`${personForm.firstName}${personForm.lastName}@correocaliente.com`)
+    },[personForm])
+
+    
 
     return {
         name,
